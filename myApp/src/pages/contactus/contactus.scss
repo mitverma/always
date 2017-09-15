@@ -1,0 +1,58 @@
+page-contactus {
+
+}
+.contactus-main{
+	position: relative;
+	background-color: $dark-blue;
+}
+.contactus-detail {
+	width: 80vw;
+	height: 80vw;
+	padding: 15px 0 0;
+	border-radius: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: $cream;
+	text-align: center;
+	h3 {
+		margin: 1.2rem 0;
+	}
+}
+.icon-contactus {
+	padding: 12px;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: #ffebd5;
+	span {
+		padding: 12px;
+		border: 3px solid $dark-blue;
+		border-radius: 100%;
+		display: inline-block;
+	}
+}
+.address-detail {
+	width: 80%;
+	padding: 10px;
+	border: 2px solid $dark-blue;
+	border-radius: 10px;
+	margin: 0 auto;
+	background-color: #ffebd5;
+	text-align: left;
+	span {
+		margin: 0 0 5px;
+		color: $dark-blue;
+		display: block;
+		font-style: normal;
+		font-size: 1.3rem;
+		font-weight: 500;
+	}
+	a {
+		color: $dark-blue;
+		text-decoration: none;
+		&:focus {
+			text-decoration: none;
+		}
+	}
+}

@@ -1,0 +1,89 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <!-- <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar> -->
+  <ion-navbar>
+  	<button ion-button menuToggle>
+  		<ion-icon name="menu"></ion-icon>
+  	</button>
+  	<ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="loginpage-content">
+	<div class="login-page">
+		<div class="login-form" (click)="loginSwipe($event)">
+			<h3 class="login-title color-dark-blue">Log in</h3>
+			<form action="">
+				<div class="form-group email">
+					<span class="icon-set"><i class="fa fa-envelope color-dark-blue"></i></span>
+					<input type="email" class="form-control" placeholder="Enter Email Address">
+				</div>
+				<div class="form-group password">
+					<span class="icon-set"><i class="fa fa-lock color-dark-blue"></i></span>
+					<input type="password" class="form-control" placeholder="Enter Password">
+				</div>
+				<div class="forgot">
+					<span>Forgot Password ?</span>
+				</div>
+				<div class="login-button">
+					<button class="btn btn-blue-outline">Log in</button>
+					<!-- <p class="login-down">Login</p> -->
+				</div>
+			</form>			
+		</div>
+	</div>
+	<div class="signup-section">
+		<div class="signup-form">
+			<h3 class="signup-title">Sign up</h3>
+			<form action="">
+				<div class="form-group signup-input">
+					<span class="icon-set"><i class="color-dark-blue"></i></span>
+					<input type="text" class="form-control" placeholder="Username">
+				</div>
+				<div class="form-group signup-input">
+					<span class="icon-set"><i class="color-dark-blue"></i></span>
+					<input type="text" class="form-control" placeholder="Mobile No.">
+				</div>
+				<div class="form-group signup-input">
+					<span class="icon-set"><i class="color-dark-blue"></i></span>
+					<input type="text" class="form-control" placeholder="Email Address">
+				</div>
+				<div class="form-group signup-input">
+					<span class="icon-set"><i class="color-dark-blue"></i></span>
+					<input type="text" class="form-control" placeholder="Password">
+				</div>
+				<div class="signup-button">
+					<button class="btn btn-cream-outline">Sign Up</button>
+				</div>
+				<div class="other-login">
+					<span>OR <br>Sign Up Using</span>
+					<!-- <img src="" alt="" class="img-responsive"> -->
+					<!-- <img src="" alt="" class="img-responsive"> -->
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="circular-menu">
+		<div class="open-menu">
+			<span class="menu-option">+</span>
+			<!-- <img src="" alt="" class="img-responsive"> -->
+			<ul>
+				<li><a href="">1</a></li>
+				<li><a href="">2</a></li>
+				<li><a href="">3</a></li>
+				<li><a href="">4</a></li>
+				<li><a href="">5</a></li>
+				<li><a href="">6</a></li>
+			</ul>
+		</div>		
+	</div>
+</ion-content>

@@ -1,0 +1,45 @@
+page-support {
+
+}
+.support-main {
+	background-color: $dark-blue;
+}
+.support-card {
+	width: 85%;
+	margin: 1.5rem auto 0;
+	background-color: $cream;
+	.list-md {
+		padding-bottom: 3rem;
+		margin: 0;
+	}
+	.item-md {
+		padding: 0 15px;
+		background-color: $cream;
+	}
+	.list-md .item-block .item-inner {
+		border-bottom: 1px solid $dark-blue;
+	}
+	.item-input .label-md {
+		margin-top: 1rem;
+		color: $dark-blue;
+		font-size: 1.7rem;
+		font-weight: 700;
+	}
+	.item-md.item-input.item-input-has-focus:last-child .item-inner, .item-md-item-input.input-has-focus:last-child  .item-inner {
+		border-bottom: none;
+		box-shadow: none;
+	}
+	.item-md.item-input.item-input-has-focus .item-inner, .item-md-item-input.input-has-focus .item-inner{
+		border-bottom: 1px solid $dark-blue;
+		box-shadow: none;
+	}	
+	ion-input[type="file"] {
+		opacity: 0;
+	}
+	.list-md .item-input:last-child {
+		border-bottom: none;
+	}
+	.example {
+		font-size: 0.95rem; 
+	}
+}

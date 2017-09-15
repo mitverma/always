@@ -17,7 +17,7 @@ import { OrderPage } from '../pages/order/order';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = FaqPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 

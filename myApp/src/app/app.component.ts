@@ -10,6 +10,10 @@ import { ContactusPage } from '../pages/contactus/contactus';
 import { SupportPage } from '../pages/support/support';
 import { FaqPage } from '../pages/faq/faq';
 import { OrderPage } from '../pages/order/order';
+import { SignupPage } from '../pages/signup/signup';
+import { VideosPage } from '../pages/videos/videos';
+import { UsagePage } from '../pages/usage/usage';
+import { ProfilePage } from '../pages/profile/profile';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +21,7 @@ import { OrderPage } from '../pages/order/order';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -27,12 +31,13 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Login', component: LoginPage },
-      { title: 'ContactUs', component: ContactusPage },
+      { title: 'Usage & Benefits', component: UsagePage },
+      { title: 'Videos', component: VideosPage },
+      { title: 'Order an Accessory', component: OrderPage },
       { title: 'Support', component: SupportPage },
-      { title: 'Faq', component: FaqPage },
-      { title: 'Order', component: OrderPage },
+      { title: 'FAQs', component: FaqPage },
+      { title: 'Contact Us', component: ContactusPage },
+      { title: 'User Profile', component: ProfilePage },
     ];
 
   }

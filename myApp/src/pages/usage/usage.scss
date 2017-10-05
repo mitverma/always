@@ -1,0 +1,20 @@
+page-usage {
+
+}
+.usage-main {
+	background-color: $cream;
+	.swiper-pagination-bullet {
+		opacity: 1;
+		background: transparent;
+		border: 1px solid $dark-blue;
+	}
+	.swiper-pagination-bullet-active {
+		background: $dark-blue;
+	}
+}
+.slide-detail {
+	margin: 3rem 3rem 5rem;
+	text-align: justify;
+	font-size: 1.7rem;
+	color: $dark-blue;
+}

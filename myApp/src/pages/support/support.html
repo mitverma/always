@@ -5,14 +5,14 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
 	<ion-navbar>
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>Support</ion-title>
+		<ion-title>
+			<img src="assets/img/header-logo.png" alt="" class="img-responsive header-logo">
+		</ion-title>
 	</ion-navbar>
-
 </ion-header>
 
 
@@ -22,38 +22,77 @@
 			SUPPORT
 		</ion-card-content>
 	</ion-card>
-	<div class="support-card">
-		<form action="">
-			<ion-list>
-				<ion-item>
-					<ion-label floating>Name</ion-label>
-					<ion-input type="text"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label floating>Contact Number</ion-label>
-					<ion-input type="number"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label floating>Email Id</ion-label>
-					<ion-input type="email"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label floating>Type of Support <span class="example">(Demo, Issues, Query, Information,Machine failure)</span></ion-label>
-					<ion-input type="text"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label floating>Address <span class="example">(If Demo)</span></ion-label>
-					<ion-input type="text"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label floating>Image Upload option <span class="example">(In case any hardware damage or failure)</span></ion-label>
-					<ion-input type="file"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label floating>Suggestion <span class="example">(We can show Prices of Accessory, so they are informed about the cost to be paid)</span></ion-label>
-					<ion-input type="text"></ion-input>
-				</ion-item>
-			</ion-list>
-		</form>
-	</div>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-1></ion-col>
+			<ion-col col-10>
+				<div class="support-card">
+					<form action="">
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="Name">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/icon.png" alt="" height="20"></span>
+							<input type="number" class="form-control" placeholder="Contact Number">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/close-envelope.png" alt="" height="20"></span>
+							<input type="email" class="form-control" placeholder="Email Id">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/type.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="Type of Support">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/notebook.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="Address">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/upload.png" alt="" height="20"></span>
+							<input type="file" class="form-control" placeholder="Image Upload option">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/suggest.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="Suggestion">
+						</div>
+						<div class="submit-button">
+							<button class="btn btn-blue-outline">Submit</button>
+						</div>
+						<ion-list class="hide">
+							<ion-item>
+								<ion-label floating>Name</ion-label>
+								<ion-input type="text"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Contact Number</ion-label>
+								<ion-input type="number"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Email Id</ion-label>
+								<ion-input type="email"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Type of Support <span class="example">(Demo, Issues, Query, Information,Machine failure)</span></ion-label>
+								<ion-input type="text"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Address <span class="example">(If Demo)</span></ion-label>
+								<ion-input type="text"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Image Upload option <span class="example">(In case any hardware damage or failure)</span></ion-label>
+								<ion-input type="file"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Suggestion <span class="example">(We can show Prices of Accessory, so they are informed about the cost to be paid)</span></ion-label>
+								<ion-input type="text"></ion-input>
+							</ion-item>
+						</ion-list>
+					</form>
+				</div>
+			</ion-col>
+			<ion-col col-1></ion-col>
+		</ion-row>
+	</ion-grid>	
 </ion-content>

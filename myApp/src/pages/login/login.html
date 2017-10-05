@@ -9,18 +9,19 @@
   <!-- <ion-navbar>
     <ion-title>Login</ion-title>
   </ion-navbar> -->
-  <ion-navbar>
+  <!-- <ion-navbar>
   	<button ion-button menuToggle>
   		<ion-icon name="menu"></ion-icon>
   	</button>
   	<ion-title>Home</ion-title>
-  </ion-navbar>
+  </ion-navbar> -->
 </ion-header>
 
 
 <ion-content class="loginpage-content">
-	<div class="login-page">
-		<div class="login-form" (click)="loginSwipe($event)">
+	<div class="bg-gradient"></div>
+	<!-- <div class="login-page">
+			<div class="login-form">
 			<h3 class="login-title color-dark-blue">Log in</h3>
 			<form action="">
 				<div class="form-group email">
@@ -36,7 +37,6 @@
 				</div>
 				<div class="login-button">
 					<button class="btn btn-blue-outline">Log in</button>
-					<!-- <p class="login-down">Login</p> -->
 				</div>
 			</form>			
 		</div>
@@ -66,8 +66,6 @@
 				</div>
 				<div class="other-login">
 					<span>OR <br>Sign Up Using</span>
-					<!-- <img src="" alt="" class="img-responsive"> -->
-					<!-- <img src="" alt="" class="img-responsive"> -->
 				</div>
 			</form>
 		</div>
@@ -75,7 +73,6 @@
 	<div class="circular-menu">
 		<div class="open-menu">
 			<span class="menu-option">+</span>
-			<!-- <img src="" alt="" class="img-responsive"> -->
 			<ul>
 				<li><a href="">1</a></li>
 				<li><a href="">2</a></li>
@@ -85,5 +82,49 @@
 				<li><a href="">6</a></li>
 			</ul>
 		</div>		
+	</div> -->
+	<div class="login-page">
+		<div class="logo">
+			<h1><img src="assets/img/logo.png" alt=""></h1>
+		</div>
+		<!-- login form -->
+		<div class="login-form">
+			<ion-grid>
+				<ion-row>
+					<ion-col col-1></ion-col>
+					<ion-col col-10>
+						<form action="">
+							<div class="form-group email">
+								<span class="icon-set"><img src="assets/img/close-envelope.png" alt="Email" height="20"></span>
+								<input type="email" class="form-control" placeholder="Enter Email Address">
+							</div>
+							<div class="form-group password">
+								<span class="icon-set"><img src="assets/img/padlock.png" alt="Password" height="20"></span>
+								<input type="password" class="form-control" placeholder="Enter Password">
+							</div>
+							<div class="forgot-password">
+								<span>Forgot Password ?</span>
+							</div>
+							<div class="login-button">
+								<button class="btn btn-blue-outline" (click)="homeRoute()">Log in</button>
+							</div>
+						</form>						
+						<span class="seperater">OR</span>
+						<div class="login-with">
+							<span class="login-strip">Login with</span>
+							<div class="social-logins">
+								<span><img src="assets/img/facebook.png" alt="Facebook" class="img-responsive" width="50"></span>
+								<span><img src="assets/img/google-plus.png" alt="Facebook" class="img-responsive" width="50"></span>
+							</div>
+						</div>
+					</ion-col>
+					<ion-col col-1></ion-col>
+				</ion-row>
+			</ion-grid>
+			<div class="sign-up">
+				<button class="signup-button" (click)="signupRedirect()">Sign Up</button>
+			</div>
+		</div>
+		<!-- login form end-->
 	</div>
 </ion-content>

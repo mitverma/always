@@ -1,0 +1,40 @@
+page-videos {
+
+}
+.video-imgholder {
+	min-height: 180px;
+	overflow: hidden;
+}
+.video-detail {
+	text-align: center;
+}
+.video-imgholder {
+	&:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.3);
+	}
+	.video-detail {
+		z-index: 2;
+		h4 {
+			color: #fff;
+			font-size: 1.8rem;
+			letter-spacing: 1px;
+		}
+		.view-more {
+			padding: 6px 12px;
+			margin-top: 5px;
+			border-radius: 4px;
+			font-size: 1.3rem;
+			font-weight: normal;
+			background-color: $cream;
+			&:hover {
+				color: white;
+			}
+		}
+	}
+}

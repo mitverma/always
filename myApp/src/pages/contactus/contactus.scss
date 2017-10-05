@@ -1,6 +1,42 @@
 page-contactus {
 
 }
+.contact-title {
+	color: $cream;
+	font-size: 2.9rem;
+	text-align: center;
+}
+.address-view {
+	padding: 10px;
+	border-radius: 6px;
+	font-style: normal;
+	background-color: rgba(255,255,255,0.85);
+	p {
+		color: $dark-blue;
+	 span:first-child {
+	 	width: 85px;
+	 	display: inline-block;
+	 }
+	 span:nth-child(2){
+	 	margin: 0px 5px;
+	 }
+	}
+	a {
+		color: $dark-blue;
+		text-decoration: none;
+	}
+}
+.map-view {
+	iframe {		
+		border-radius: 6px;
+		overflow: hidden;
+	}
+	p {
+		color: $cream;
+		font-size: 2rem;
+		text-align: center;
+	}
+}
 .contactus-main{
 	position: relative;
 	background-color: $dark-blue;

@@ -5,55 +5,106 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
 	<ion-navbar>
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>Order</ion-title>
+		<ion-title>
+			<img src="assets/img/header-logo.png" alt="" class="img-responsive header-logo">
+		</ion-title>
 	</ion-navbar>
-
 </ion-header>
 
 
 <ion-content class="order-main support-main">
+	<div class="bg-gradient"></div>
 	<ion-card class="card-detail">
 		<ion-card-content>
 			<span>ORDER AN ACCESSORY</span>
 		</ion-card-content>
 	</ion-card>
-	<div class="support-card order-card">
-		<form action="">
-			<ion-list>
-				<ion-item>
-					<ion-label floating>Name</ion-label>
-					<ion-input type="text"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label floating>Contact Number</ion-label>
-					<ion-input type="number"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label floating>Email Id</ion-label>
-					<ion-input type="email"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label floating>Address</ion-label>
-					<ion-input type="text"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label floating>Accessory Type</ion-label>
-					<ion-input type="text"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label floating>Accessory Quantity</ion-label>
-					<ion-input type="text"></ion-input>
-				</ion-item>
-				<ion-item>
-					<ion-label floating>Machine Serial Number</ion-label>
-					<ion-input type="text"></ion-input>
-				</ion-item>
-			</ion-list>
-		</form>
-	</div>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-1></ion-col>
+			<ion-col col-10>
+				<div class="support-card order-card">
+					<form action="">
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="Name">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/icon.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="Contact No." >
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/close-envelope.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="Email Id">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/notebook.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="Address">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/type.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="Accessory Type">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/stack-overflow.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="Accessory Quantity">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/serial.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="Machine Serail Number">
+						</div>
+						<div class="submit-button">
+							<button class="btn btn-blue-outline">Submit</button>
+						</div>
+						<ion-list class="hide">
+							<ion-item>
+								<ion-label floating>Name</ion-label>
+								<ion-input type="text"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Contact Number</ion-label>
+								<ion-input type="number"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Email Id</ion-label>
+								<ion-input type="email"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Address</ion-label>
+								<ion-input type="text"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Accessory Type</ion-label>
+								<ion-input type="text"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Accessory Quantity</ion-label>
+								<ion-input type="text"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Machine Serial Number</ion-label>
+								<ion-input type="text"></ion-input>
+							</ion-item>
+						</ion-list>
+					</form>
+				</div>
+			</ion-col>
+			<ion-col col-1></ion-col>
+		</ion-row>
+	</ion-grid>
+<!-- 	<div class="order-form">
+		<ion-grid>
+			<ion-row>
+				<ion-col col-1></ion-col>
+				<ion-col col-10>
+					<form action=""></form>
+				</ion-col>
+				<ion-col col-1></ion-col>
+			</ion-row>
+		</ion-grid>
+	</div> -->
 </ion-content>

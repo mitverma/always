@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,MenuController } from 'ionic-angular';
+import {SignupPage} from '../signup/signup';
+import {HomePage} from '../home/home';
 
 /**
  * Generated class for the LoginPage page.
@@ -15,11 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menu:MenuController) {
+    
+  }
+  signupRedirect(){
+     this.navCtrl.push(SignupPage);
+  }
+  homeRoute(){
+    this.navCtrl.push(HomePage);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+    this.menu.enable(false);
   }
   loginSwipe($event) {
   	console.log($event,'event')

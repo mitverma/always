@@ -1,6 +1,22 @@
 page-home {
 
 }
+.bar-button-menutoggle-md ion-icon {
+	color: $cream;
+}
+.back-button-icon-md { color : $cream; }
+.show-menu {
+	.toolbar-title-md { margin-left: 0;  }
+}
+.toolbar-background-md {
+	background: $dark-blue;
+}
+.toolbar-title-md {
+	margin-left: -28px;
+	img.header-logo {
+		margin: 0 auto;
+	}
+}
 .home-main {
 	background-color: $dark-blue;
 }
@@ -52,4 +68,32 @@ page-home {
 		font-weight: 500;
 		text-align: center;
 	}
+}
+.list-imgholder {
+	min-height: 150px;
+	background-position: 50% 50%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0,0,0,0.3);
+	}
+	&.banner-video { background-image: url('../assets/img/banner-video.jpg'); }
+	&.usage { background-image: url('../assets/img/usage.jpg'); }
+	&.order { background-image: url('../assets/img/order.jpg'); }
+	&.support { background-image: url('../assets/img/support.jpg'); }
+	&.faq { background-image: url('../assets/img/faq.jpg'); }
+	&.contact { background-image: url('../assets/img/contact.jpg'); }
+}
+.banner-detail {
+	font-size: 1.7rem;
+	color: #fff;
+	text-align: center;
+	z-index: 2;
 }

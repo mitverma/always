@@ -1,3 +1,45 @@
 page-faq {
 
 }
+.faq-heading {
+	overflow: auto;
+}
+.faq-title {
+	float: left;
+	}
+	.faq-icon {
+	margin:  0 !important;
+	float: right;
+}
+.faq-descp {
+	padding-top: 8px;
+	border-top: 1px solid $dark-blue;
+	margin-top: 8px;
+  font-size: 1.5rem;
+	white-space: initial;
+	text-overflow: initial;
+}
+.faq-detail {
+	.list-md {
+		margin: 10px 0;
+	}
+	.item-md {
+		padding: 0;
+		margin-bottom: 10px;
+		background-color: transparent;
+		h3 {
+			font-size: 1.7rem; //this is for heading accordion
+		}
+	}
+	.list-md .item-block .item-inner {
+		padding: 0;
+		border-bottom: none;
+	}
+	.label-md {
+		padding: 10px;
+		border-radius: 4px;
+		margin: 0 15px;
+		background-color: $cream;
+	}
+}
+

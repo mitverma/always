@@ -43,3 +43,20 @@ $cream : #DABD9D;
 	}
 }
 /*button*/
+/*classes*/
+.img-responsive {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+.relate {
+	position: relative;
+}
+.get-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.full-width { width: 100%; }
+/*classes end*/

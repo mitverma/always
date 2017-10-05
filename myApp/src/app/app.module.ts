@@ -10,6 +10,10 @@ import { ContactusPage } from '../pages/contactus/contactus';
 import { SupportPage } from '../pages/support/support';
 import { FaqPage } from '../pages/faq/faq';
 import { OrderPage } from '../pages/order/order';
+import { SignupPage } from '../pages/signup/signup';
+import { VideosPage } from '../pages/videos/videos';
+import { UsagePage } from '../pages/usage/usage';
+import { ProfilePage } from '../pages/profile/profile';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,6 +28,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SupportPage,
     FaqPage,
     OrderPage,
+    SignupPage,
+    VideosPage,
+    UsagePage,
+    ProfilePage,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +47,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SupportPage,
     FaqPage,
     OrderPage,
+    SignupPage,
+    VideosPage,
+    UsagePage,
+    ProfilePage,
   ],
   providers: [
     StatusBar,

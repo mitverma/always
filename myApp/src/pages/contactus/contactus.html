@@ -5,24 +5,63 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
 	<ion-navbar>
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>contactus</ion-title>
+		<ion-title>
+			<img src="assets/img/header-logo.png" alt="" class="img-responsive header-logo">
+		</ion-title>
 	</ion-navbar>
-
 </ion-header>
 
 
 <ion-content class="contactus-main">
+	<div class="bg-gradient"></div>
 	<ion-card class="card-detail">
 		<ion-card-content>
 			Meet The Next Generation Of Drinking Water,<br>Using The Mostadvanced Technology
 		</ion-card-content>
 	</ion-card>
-	<div class="contactus-detail">
+	<ion-grid>
+		<ion-row>
+			<ion-col col-1></ion-col>
+			<ion-col col-10>
+				<div class="contact-view">
+					<h2 class="contact-title">Contact Us</h2>
+					<address class="address-view">
+						<p>
+							<span>Location </span>
+							<span>:</span>
+							<span>Mumbai - 400086, INDIA.</span>
+						</p>
+						<p>
+							<span>Phone</span>
+							<span>:</span>
+							<span><a href="tel:+91000000000" target="_blank">+91 0000000000</a> | <a href="tel:+912225252525">+91 222 25252525</a></span>
+						</p>
+						<p>
+							<span>Email</span>
+							<span>:</span>
+							<span><a href="mailto:loremipsum.com" target="_blank">loremimpsum.com</a></span>
+						</p>
+						<p>
+							<span>Find us on </span>
+							<span>:</span>
+							<span><a href="" target="_blank" title="Facebook">Facebook</a> | <a href="" target="_blank" title="Twitter">Twitter</a> | <a href="" target="_blank" title="Linkedin">Linkedin</a></span>
+						</p>						
+					</address>
+				</div>
+				<div class="map-view">
+					<p>Find us on </p>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.4469866151057!2d72.90544131427642!3d19.08803705655574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7d32a99af9b%3A0x617a931dc4077b62!2sBew+Digital!5e0!3m2!1sen!2sin!4v1506950606206" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+			</ion-col>
+			<ion-col col-1></ion-col>
+		</ion-row>
+	</ion-grid>
+
+	<div class="contactus-detail" hidden>
 		<div class="icon-contactus">
 			<span>
 				<img src="assets/img/old-handphone.png" alt="" class="" width="30px">
@@ -39,7 +78,7 @@
 			</address>
 		</div>
 	</div>
-	<div class="circular-menu">
+	<div class="circular-menu" hidden>
 		<div class="open-menu">
 			<span class="menu-option">+</span>
 			<!-- <img src="" alt="" class="img-responsive"> -->

@@ -3,7 +3,9 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      <img src="assets/img/header-logo.png" alt="" class="img-responsive header-logo">
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -20,24 +22,67 @@
 
   <!-- <button ion-button secondary menuToggle>Toggle Menu</button> -->
   <div class="homescreen-main">
-    <div class="links">
-      <ul>
-        <li class="small-dots"></li>
-        <li class="small-dots"></li>
-        <li class="small-dots"></li>
-        <li class="small-dots"></li>
-        <li class="small-dots"></li>
-        <li class="medium-dots"></li>
-        <li class="medium-dots"></li>
-        <li class="medium-dots"></li>
-        <li class="views">Support</li>
-        <li class="views">Usages</li>
-        <li class="views">Order an Acessory</li>
-        <li class="views">Videos</li>
-        <li class="views">Faqs</li>
-        <li class="views">Support</li>
-        <li class="views">Testimonals</li>
-      </ul>
-    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          <div class="list-imgholder usage" (click)="viewUsage();">
+            <!-- <img src="assets/img/usage.jpg" alt="" class="img-responsive"> -->
+            <div class="get-center full-width banner-detail">
+              <h2>Usage &amp; Benefits</h2>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <div class="list-imgholder banner-video" (click)="viewVideos();">
+            <!-- <img src="assets/img/banner-video.jpg" alt="" class="img-responsive"> -->
+            <div class="get-center full-width banner-detail">
+              <h2>Videos</h2>
+            </div>
+          </div>
+        </ion-col>       
+      </ion-row>      
+      <ion-row>
+        <ion-col col-12>
+          <div class="list-imgholder order" (click)="viewOrder();">
+            <!-- <img src="assets/img/order.jpg" alt="" class="img-responsive"> -->
+            <div class="get-center full-width banner-detail">
+              <h2>Order an Accessory</h2>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <div class="list-imgholder support" (click)="viewSupport();">
+            <!-- <img src="assets/img/support.jpg" alt="" class="img-responsive"> -->
+            <div class="get-center full-width banner-detail">
+              <h2>Support</h2>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <div class="list-imgholder faq" (click)="viewFaq();">
+            <!-- <img src="assets/img/faq.jpg" alt="" class="img-responsive"> -->
+            <div class="get-center full-width banner-detail">
+              <h2>FAQs</h2>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <div class="list-imgholder contact" (click)="viewContact();">
+            <!-- <img src="assets/img/contact.jpg" alt="" class="img-responsive"> -->
+            <div class="get-center full-width banner-detail">
+              <h2>Contact Us</h2>
+            </div>
+          </div>
+        </ion-col>        
+      </ion-row>     
+    </ion-grid>
   </div>
 </ion-content>

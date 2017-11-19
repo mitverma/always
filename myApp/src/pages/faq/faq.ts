@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
+import {AllPostProvider} from '../../providers/all-post/all-post';
 
 /**
  * Generated class for the FaqPage page.
@@ -12,11 +14,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-faq',
   templateUrl: 'faq.html',
+  providers : [AllPostProvider]
 })
 export class FaqPage {
-	
-	faqArray : any;
+  faqArray : any;
   viewGroup = null;
+	posts = [];
   viewAccordion(view){
     console.log(view);
     if(this.viewDetails(view)){
@@ -31,7 +34,16 @@ export class FaqPage {
     return this.viewGroup === view;
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public http: Http,public navParams: NavParams,public faqProvider: AllPostProvider) {
+ //  this.faqProvider.getFaq().subscribe(data =>{
+ //    console.log(data,'what is data');
+ //   this.posts = data;
+ // });
+
+    this.http.get('https://aquatatva.herokuapp.com/api/showfaq').map(res => res.json()).subscribe(data => {
+        this.posts = data;
+    });
+ 
   this.faqArray = [
   {
     title: "accordion1",

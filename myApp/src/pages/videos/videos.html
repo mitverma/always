@@ -21,13 +21,19 @@
 	<div class="video-list">
 		<ion-list>
 			<ion-card *ngFor="let video of Videos">
-				<div class="video-imgholder relate">
-					<img src="{{video.img}}" alt="" class="img-responsive get-center full-width">
-					<div class="video-detail get-center full-width">
-						<h4>{{video.title}}</h4>
-						<!-- <button class="view-more btn-cream-outline" ion-button>View More</button> -->
-					</div>
-				</div>
+				<ion-grid>
+					<ion-row>
+						<ion-col col-5>
+							<img src="{{video.img}}" alt="" class="img-responsive">
+						</ion-col>
+						<ion-col col-7>
+							<div class="video-detail">
+								<h4>{{video.title}}</h4>
+								<!-- <button class="view-more btn-cream-outline" ion-button>View More</button> -->
+							</div>
+						</ion-col>
+					</ion-row>
+				</ion-grid>				
 			</ion-card>
 		</ion-list>
 	</div>

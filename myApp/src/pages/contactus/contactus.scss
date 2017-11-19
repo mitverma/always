@@ -12,10 +12,11 @@ page-contactus {
 	font-style: normal;
 	background-color: rgba(255,255,255,0.85);
 	p {
-		color: $dark-blue;
+		color: $dark-blue; 
 	 span:first-child {
-	 	width: 85px;
+	 	width: 25px;
 	 	display: inline-block;
+	 	vertical-align: middle;
 	 }
 	 span:nth-child(2){
 	 	margin: 0px 5px;
@@ -24,6 +25,14 @@ page-contactus {
 	a {
 		color: $dark-blue;
 		text-decoration: none;
+	}
+}
+.social-icon {
+	text-align: center;
+	span, a {
+		margin: 0 5px;
+		display: inline-block;
+		vertical-align: middle;
 	}
 }
 .map-view {

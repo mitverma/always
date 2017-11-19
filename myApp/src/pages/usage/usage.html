@@ -19,9 +19,9 @@
 <ion-content class="usage-main">	
 	<div class="slider">
 		<ion-slides pager>
-			<ion-slide *ngFor="let slide of slides">
-				<img [src]="slide.img">
-				<div class="slide-detail">{{slide.descp}}</div>
+			<ion-slide *ngFor="let slide of usageBenefits">
+				<img [src]="slide.img" alt="{{slide.title}}">
+				<div class="slide-detail">{{slide.usage_and_benefits}}</div>
 			</ion-slide>
 		</ion-slides>
 	</div>

@@ -25,13 +25,13 @@
 	</ion-card>
 	<div class="faq-detail"> 
 		<ion-list>
-			<ion-item *ngFor="let faq of faqArray; let view=index" (click)="viewAccordion(view)" [ngClass]="{active: viewDetails(view)}">
+			<ion-item *ngFor="let faq of posts; let view=index" (click)="viewAccordion(view)" [ngClass]="{active: viewDetails(view)}">
 				<h3 class="faq-heading">
 					<span class="faq-title">{{faq.title}}</span>
 					<ion-icon color="success" class="faq-icon" item-right [name]="viewDetails(view) ? 'arrow-dropup' : 'arrow-dropdown'"></ion-icon>
 				</h3>				
 				<div class="faq-descp" *ngIf="viewDetails(view)">
-					{{faq.descp}}
+					{{faq.description}}
 				</div>
 			</ion-item> 
 		</ion-list>

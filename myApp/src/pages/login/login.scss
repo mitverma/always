@@ -8,10 +8,11 @@ page-login {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: url('../assets/img/background-water.jpg') no-repeat 50% 50%;
+	/*background: url('../assets/img/background-water.jpg') no-repeat 50% 50%;*/
+	background: url('../assets/img/drinking-water.jpg') no-repeat 50% 50%;
 	background-attachment: fixed;
 	z-index: -1;
-	/*filter: blur(1px);*/
+	filter: blur(2px);
 	-webkit-background-size: cover;
 	background-size: cover;
 	&:before {

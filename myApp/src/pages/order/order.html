@@ -28,34 +28,42 @@
 			<ion-col col-1></ion-col>
 			<ion-col col-10>
 				<div class="support-card order-card">
-					<form action="">
+					<form (ngSubmit)="formOrder()">
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Name">
+							<input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="orderForm.name" required>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/icon.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Contact No." >
+							<input type="text" class="form-control" placeholder="Contact No." name="contact" [(ngModel)]="orderForm.contact" required>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/close-envelope.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Email Id">
+							<input type="text" class="form-control" placeholder="Email Id" name="email" [(ngModel)]="orderForm.email" required>
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/location.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="City" name="city" [(ngModel)]="orderForm.city" required>
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/location.png" alt="" height="20"></span>
+							<input type="text" class="form-control" placeholder="State" name="state" [(ngModel)]="orderForm.state" required>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/notebook.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Address">
+							<input type="text" class="form-control" placeholder="Address" name="address" [(ngModel)]="orderForm.address" required>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/type.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Accessory Type">
+							<input type="text" class="form-control" placeholder="Accessory Type" name="accessory" [(ngModel)]="orderForm.accessory" required>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/stack-overflow.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Accessory Quantity">
+							<input type="text" class="form-control" placeholder="Accessory Quantity" name="quantity" [(ngModel)]="orderForm.quantity" required>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/serial.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Machine Serail Number">
+							<input type="text" class="form-control" placeholder="Machine Serail Number" name="serialnumber" [(ngModel)]="orderForm.serialNumber" required>
 						</div>
 						<div class="submit-button">
 							<button class="btn btn-blue-outline">Submit</button>

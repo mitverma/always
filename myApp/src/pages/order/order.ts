@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import {AllPostProvider} from '../../providers/all-post/all-post';
+import {FormGroup, FormBuilder, FormControl, Validators} from "@angular/forms";
+import { NgForm } from '@angular/forms';
 
 /**
  * Generated class for the OrderPage page.
@@ -20,18 +22,24 @@ export class OrderPage {
 
 	orderForm = {};
 	orderFormData = {};
-	message = "";
+	message = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http, public orderProvider: AllPostProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public FormBuilder: FormBuilder,public http:Http, public orderProvider: AllPostProvider) {
   }
 
-  formOrder(){
-  	// orderFormData = {
-  		
-  	// }
-    
-  	this.orderProvider.saveOrder(this.orderFormData).subscribe(data=>{
+  formOrder(orderForm){   
+    console.log(orderForm,'orderForm');
+  	this.orderProvider.saveOrder(this.orderForm).subscribe(data=>{
   		this.message = data;
+      if(data.message == "successfully Registered Support Request"){
+          this.message = true; 
+          setTimeout(function(){
+            this.message = false;
+            console.log('out');
+          }.bind(this),3000);
+        }else {
+          this.message = false;
+        }
   	})
   }
 

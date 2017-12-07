@@ -26,73 +26,78 @@
 			<ion-col col-1></ion-col>
 			<ion-col col-10>
 				<div class="support-card">
-					<form [formGroup]="supportForm" (ngSubmit)="formSupport()">
+					<form #supportForm="ngForm" (ngSubmit)="formSupport(supportForm.value); supportForm.reset();" >
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
-							<input type="text" class="form-control" name="name" [(ngModel)]="supportForm.name" placeholder="Name" required>
+							<input type="text" class="form-control" name="name" [(ngModel)]="supportForm.name" placeholder="Name" #name="ngModel" required>
+							<div class="error-display" *ngIf="name.errors && (name.dirty || name.touched)">
+								<div [hidden]="!name.errors.required">
+									Please Enter the Name!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/icon.png" alt="" height="20"></span>
-							<input type="number" class="form-control" name="contact" [(ngModel)]="supportForm.contact" placeholder="Contact Number" required>
+							<input type="number" class="form-control" name="contact" [(ngModel)]="supportForm.contact" placeholder="Contact Number" #contact="ngModel" required>
+							<div class="error-display" *ngIf="contact.errors && (contact.dirty || contact.touched)">
+								<div [hidden]="!contact.errors.required">
+									Please Enter the Contact Number!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/close-envelope.png" alt="" height="20"></span>
-							<input type="email" class="form-control" name="email" [(ngModel)]="supportForm.email" placeholder="Email Id" required>
+							<input type="email" class="form-control" name="email" [(ngModel)]="supportForm.email" placeholder="Email Id" #email="ngModel" required>
+							<div class="error-display" *ngIf="email.errors && (email.dirty || email.touched)">
+								<div [hidden]="!email.errors.required">
+									Please Enter the Email Address!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/type.png" alt="" height="20"></span>
-							<input type="text" class="form-control" name="supporttype" [(ngModel)]="supportForm.supportType" placeholder="Type of Support" required>
+							<input type="text" class="form-control" name="supporttype" [(ngModel)]="supportForm.supportType" placeholder="Type of Support" #supporttype="ngModel" required>
+							<div class="error-display" *ngIf="supporttype.errors && (supporttype.dirty || supporttype.touched)">
+								<div [hidden]="!supporttype.errors.required">
+									Please Enter Type of Support!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/notebook.png" alt="" height="20"></span>
-							<input type="text" class="form-control" name="address" [(ngModel)]="supportForm.address" placeholder="Address" required>
+							<input type="text" class="form-control" name="address" [(ngModel)]="supportForm.address" placeholder="Address" #address="ngModel" required>
+							<div class="error-display" *ngIf="address.errors && (address.dirty || address.touched)">
+								<div [hidden]="!address.errors.required">
+									Please Enter the Address!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/upload.png" alt="" height="20"></span>
 							<input type="file" class="form-control" name="Image" [(ngModel)]="supportForm.image" placeholder="Image Upload option">
+							<!-- <div class="error-display" *ngIf="address.errors && (address.dirty || address.touched)">
+								<div [hidden]="!address.errors.required">
+									Book title is required!
+								</div>
+							</div> -->
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/suggest.png" alt="" height="20"></span>
-							<input type="text" class="form-control" name="suggestion" [(ngModel)]="supportForm.suggest" placeholder="Suggestion" required>
+							<input type="text" class="form-control" name="suggestion" [(ngModel)]="supportForm.suggest" placeholder="Suggestion" #suggest="ngModel" required>
+							<div class="error-display" *ngIf="suggest.errors && (suggest.dirty || suggest.touched)">
+								<div [hidden]="!suggest.errors.required">
+									Please Enter your Suggestions!
+								</div>
+							</div>
 						</div>
 						<div class="submit-button">
 							<button type="submit" class="btn btn-blue-outline" [disabled]=!supportForm.valid>Submit</button>
-						</div>
-						<ion-list class="hide">
-							<ion-item>
-								<ion-label floating>Name</ion-label>
-								<ion-input type="text"></ion-input>
-							</ion-item>
-							<ion-item>
-								<ion-label floating>Contact Number</ion-label>
-								<ion-input type="number"></ion-input>
-							</ion-item>
-							<ion-item>
-								<ion-label floating>Email Id</ion-label>
-								<ion-input type="email"></ion-input>
-							</ion-item>
-							<ion-item>
-								<ion-label floating>Type of Support <span class="example">(Demo, Issues, Query, Information,Machine failure)</span></ion-label>
-								<ion-input type="text"></ion-input>
-							</ion-item>
-							<ion-item>
-								<ion-label floating>Address <span class="example">(If Demo)</span></ion-label>
-								<ion-input type="text"></ion-input>
-							</ion-item>
-							<ion-item>
-								<ion-label floating>Image Upload option <span class="example">(In case any hardware damage or failure)</span></ion-label>
-								<ion-input type="file"></ion-input>
-							</ion-item>
-							<ion-item>
-								<ion-label floating>Suggestion <span class="example">(We can show Prices of Accessory, so they are informed about the cost to be paid)</span></ion-label>
-								<ion-input type="text"></ion-input>
-							</ion-item>
-						</ion-list>
+						</div>						
 					</form>
-				</div>
-				<div class="" [hidden]="!message">
-					<p>Support Request Successfully Registered </p>
-				</div>
+				</div>				
+				<div class="alert-pop" *ngIf="message" role="alert">
+					<p>Support Request Successfully Registered! </p>
+				</div>				
 			</ion-col>
 			<ion-col col-1></ion-col>
 		</ion-row>

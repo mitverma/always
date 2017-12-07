@@ -20,7 +20,7 @@
 	<div class="bg-gradient"></div>
 	<ion-card class="card-detail">
 		<ion-card-content>
-			<span>ORDER AN ACCESSORY</span>
+			<span>ORDER YOUR ACCESSORY</span>
 		</ion-card-content>
 	</ion-card>
 	<ion-grid>
@@ -28,78 +28,96 @@
 			<ion-col col-1></ion-col>
 			<ion-col col-10>
 				<div class="support-card order-card">
-					<form (ngSubmit)="formOrder()">
+					<form #orderForm="ngForm" (ngSubmit)="formOrder(orderForm.value); orderForm.reset();">
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="orderForm.name" required>
+							<input type="text" class="form-control" name="fullName" [(ngModel)]="orderForm.fullName"  placeholder="Name" #fullName="ngModel" required>
+							<div class="error-display" *ngIf="fullName.errors && (fullName.dirty || fullName.touched)">
+								<div [hidden]="!fullName.errors.required">
+									Please Enter your Name!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/icon.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Contact No." name="contact" [(ngModel)]="orderForm.contact" required>
+							<input type="text" class="form-control" placeholder="Contact No." name="contact" [(ngModel)]="orderForm.contact" #contact="ngModel" required>
+							<div class="error-display" *ngIf="contact.errors && (contact.dirty || contact.touched)">
+								<div [hidden]="!contact.errors.required">
+									Please Enter the Contact Number!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/close-envelope.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Email Id" name="email" [(ngModel)]="orderForm.email" required>
+							<input type="text" class="form-control" placeholder="Email Id" name="email" [(ngModel)]="orderForm.email" #email="ngModel" required>
+							<div class="error-display" *ngIf="email.errors && (email.dirty || email.touched)">
+								<div [hidden]="!email.errors.required">
+									Please Enter the Email Address!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/location.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="City" name="city" [(ngModel)]="orderForm.city" required>
+							<input type="text" class="form-control" placeholder="City" name="city" [(ngModel)]="orderForm.city" #city="ngModel" required>
+							<div class="error-display" *ngIf="city.errors && (city.dirty || city.touched)">
+								<div [hidden]="!city.errors.required">
+									Please Enter your City!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/location.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="State" name="state" [(ngModel)]="orderForm.state" required>
+							<input type="text" class="form-control" placeholder="State" name="state" [(ngModel)]="orderForm.state" #state="ngModel" required>
+							<div class="error-display" *ngIf="state.errors && (state.dirty || state.touched)">
+								<div [hidden]="!state.errors.required">
+									Please Enter your State!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/notebook.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Address" name="address" [(ngModel)]="orderForm.address" required>
+							<input type="text" class="form-control" placeholder="Address" name="address" [(ngModel)]="orderForm.address" #address="ngModel" required>
+							<div class="error-display" *ngIf="address.errors && (address.dirty || address.touched)">
+								<div [hidden]="!address.errors.required">
+									Please Enter your Address!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/type.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Accessory Type" name="accessory" [(ngModel)]="orderForm.accessory" required>
+							<input type="text" class="form-control" placeholder="Accessory Type" name="accessory" [(ngModel)]="orderForm.accessory" #accessory="ngModel" required>
+							<div class="error-display" *ngIf="accessory.errors && (accessory.dirty || accessory.touched)">
+								<div [hidden]="!accessory.errors.required">
+									Please Enter the Accessory Type!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/stack-overflow.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Accessory Quantity" name="quantity" [(ngModel)]="orderForm.quantity" required>
+							<input type="text" class="form-control" placeholder="Accessory Quantity" name="quantity" [(ngModel)]="orderForm.quantity" #quantity="ngModel" required>
+							<div class="error-display" *ngIf="quantity.errors && (quantity.dirty || quantity.touched)">
+								<div [hidden]="!quantity.errors.required">
+									Please Enter the Quantity!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/serial.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Machine Serail Number" name="serialnumber" [(ngModel)]="orderForm.serialNumber" required>
+							<input type="text" class="form-control" placeholder="Machine Serail Number" name="serialnumber" [(ngModel)]="orderForm.serialNumber" #serialNumber="ngModel" required>
+							<div class="error-display" *ngIf="serialNumber.errors && (serialNumber.dirty || serialNumber.touched)">
+								<div [hidden]="!serialNumber.errors.required">
+									Please Enter the Serial Number!
+								</div>
+							</div>
 						</div>
 						<div class="submit-button">
-							<button class="btn btn-blue-outline">Submit</button>
+							<button class="btn btn-blue-outline" [disabled]="!orderForm.valid">Submit</button>
 						</div>
-						<ion-list class="hide">
-							<ion-item>
-								<ion-label floating>Name</ion-label>
-								<ion-input type="text"></ion-input>
-							</ion-item>
-							<ion-item>
-								<ion-label floating>Contact Number</ion-label>
-								<ion-input type="number"></ion-input>
-							</ion-item>
-							<ion-item>
-								<ion-label floating>Email Id</ion-label>
-								<ion-input type="email"></ion-input>
-							</ion-item>
-							<ion-item>
-								<ion-label floating>Address</ion-label>
-								<ion-input type="text"></ion-input>
-							</ion-item>
-							<ion-item>
-								<ion-label floating>Accessory Type</ion-label>
-								<ion-input type="text"></ion-input>
-							</ion-item>
-							<ion-item>
-								<ion-label floating>Accessory Quantity</ion-label>
-								<ion-input type="text"></ion-input>
-							</ion-item>
-							<ion-item>
-								<ion-label floating>Machine Serial Number</ion-label>
-								<ion-input type="text"></ion-input>
-							</ion-item>
-						</ion-list>
 					</form>
 				</div>
+				<div class="alert-pop" *ngIf="message" role="alert">
+					<p>Order Request Successfully Registered! </p>
+				</div>	
 			</ion-col>
 			<ion-col col-1></ion-col>
 		</ion-row>

@@ -59,4 +59,27 @@ $cream : #DABD9D;
 	transform: translate(-50%,-50%);
 }
 .full-width { width: 100%; }
+/*menu*/
+.menu-inner {
+	width: 250px;
+	.scroll-content {
+		background-color: $cream;
+	}
+	.item-md {
+		background-color: $cream;
+	}
+	.list-md .item-block .item-inner {
+		color: $dark-blue;
+		border-bottom: 1px solid $dark-blue;
+	}
+}
+.menu-icon, .menu-title {
+	display: inline-block;
+	vertical-align: middle;
+}
+.menu-icon {
+	margin-right: 5px;
+}
+
+/*menu end*/
 /*classes end*/

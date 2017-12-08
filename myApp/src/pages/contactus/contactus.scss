@@ -14,12 +14,24 @@ page-contactus {
 	p {
 		color: $dark-blue; 
 	 span:first-child {
-	 	width: 25px;
+	 	width: 8%;
 	 	display: inline-block;
-	 	vertical-align: middle;
+	 	text-align: center;
+	 	vertical-align: top;
 	 }
 	 span:nth-child(2){
-	 	margin: 0px 5px;
+	 	width: 4%;
+	 	display: inline-block;
+	 	margin-left: -4px;
+	 	text-align: center;
+	 	vertical-align: middle;
+	 }
+	 span:last-child{
+	 	width: 88%;
+	 	padding-left: 5px;
+	 	display: inline-block;
+	 	margin-left: -4px;
+	 	vertical-align: middle;
 	 }
 	}
 	a {

@@ -85,12 +85,20 @@
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/type.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Accessory Type" name="accessory" [(ngModel)]="orderForm.accessory" #accessory="ngModel" required>
+							<!-- <input type="text" class="form-control" placeholder="Accessory Type" name="accessory" [(ngModel)]="orderForm.accessory" #accessory="ngModel" required>
 							<div class="error-display" *ngIf="accessory.errors && (accessory.dirty || accessory.touched)">
 								<div [hidden]="!accessory.errors.required">
 									Please Enter the Accessory Type!
 								</div>
-							</div>
+							</div> -->
+							<!-- <div class="error-display" *ngIf="accessory.errors && (accessory.dirty || accessory.touched)">
+								<div [hidden]="!accessory.errors.required">
+									Please Select the Accessory Type!
+								</div>
+							</div> -->
+							<select name="accessory" [(ngModel)]="orderForm.accessory" #accessory="ngModel" multiple required>
+								<option [value]="option" *ngFor="let option of orderOption">{{option}}</option>
+							</select>					
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/stack-overflow.png" alt="" height="20"></span>

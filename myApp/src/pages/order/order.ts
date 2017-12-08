@@ -23,6 +23,9 @@ export class OrderPage {
 	orderForm = {};
 	orderFormData = {};
 	message = false;
+  orderOption: string[];
+  orderOption = ['A51 - Pre Filter inlet pipe 1 meter','A52 - Ionizer inlet pipe 1 meter','A53 - Acidic water  ionizer output pipe  1 meter','A54 - Filter','Alkaline water output hose'];
+  // orderOption = ['amit','vikas','aniruddh'];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public FormBuilder: FormBuilder,public http:Http, public orderProvider: AllPostProvider) {
   }

@@ -1,3 +1,79 @@
 page-order {
 
 }
+.order-select {
+	width: 100%;
+	height: 45px;
+	padding: 14px 12px 6px 34px;
+	display: block;
+	border-radius: 6px;
+	background-color: rgba(255, 255, 255, 0.85);
+}
+.set-order {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);	
+	background-color: $cream;
+	z-index: 12;
+}
+.show-type {
+	ul {
+		margin: 0;
+		padding: 20px 20px 0;
+	}
+	li {
+		margin: 10px 0;
+		list-style-type: none;
+		span:first-child {
+		width: 73%;
+		display: inline-block;
+		vertical-align: top;
+	}
+	input{
+		width: 13%;
+		margin-right: 10px;
+		display: inline-block;
+		vertical-align: top;
+		border: 1px solid #000;
+		text-align: center;
+		background-color: $cream;
+	}
+	.check-box {
+		width: 7%;
+		height: 20px;
+		padding: 2px;
+		border: 1px solid #000;
+		display: inline-block;
+		vertical-align: top;		
+		img {
+		 opacity: 0; 
+		 transition: all 300ms linear;
+		}
+		&.active {
+			img { 
+				opacity: 1; 
+				transition: all 300ms linear;
+			}			
+		}
+	}
+	}
+}
+.modal-sec { 
+	padding-bottom: 10px;
+	text-align: center; 
+}
+	.cancel-access {
+		display: inline-block;
+    padding: 6px 10px;
+    border-radius: 4px;
+	}
+.modal-close {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.7);
+}

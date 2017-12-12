@@ -56,7 +56,20 @@
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/type.png" alt="" height="20"></span>
-							<input type="text" class="form-control" name="supporttype" [(ngModel)]="supportForm.supportType" placeholder="Type of Support" #supporttype="ngModel" required>
+							<!-- <input type="text" class="form-control" name="supporttype" [(ngModel)]="supportForm.supportType" placeholder="Type of Support" #supporttype="ngModel" required> -->
+							<!-- <div class="error-display" *ngIf="supporttype.errors && (supporttype.dirty || supporttype.touched)">
+								<div [hidden]="!supporttype.errors.required">
+									Please Enter Type of Support!
+								</div>
+							</div> -->
+							<select class="support-select" name="supporttype" id="" [(ngModel)]="supportForm.supportType" placeholder="Type of Support" #supporttype="ngModel" required>
+								<!-- <option [value]="typeSupport" *ngFor="let typeSupport of supportTypeArray"></option> -->
+								<option value="Demo">Demo</option>
+								<option value="Issues">Issues</option>
+								<option value="Query">Query</option>
+								<option value="Information">Information</option>
+								<option value="Machine Failure">Machine Failure</option>
+							</select>
 							<div class="error-display" *ngIf="supporttype.errors && (supporttype.dirty || supporttype.touched)">
 								<div [hidden]="!supporttype.errors.required">
 									Please Enter Type of Support!
@@ -74,7 +87,8 @@
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/upload.png" alt="" height="20"></span>
-							<input type="file" class="form-control" name="Image" [(ngModel)]="supportForm.image" placeholder="Image Upload option">
+							<span class="choose-file">Upload Your Image</span>
+							<input type="file" class="form-control" name="Image" [(ngModel)]="supportForm.image" placeholder="Image Upload option" accept="image/*">
 							<!-- <div class="error-display" *ngIf="address.errors && (address.dirty || address.touched)">
 								<div [hidden]="!address.errors.required">
 									Book title is required!

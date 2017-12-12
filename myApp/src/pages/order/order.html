@@ -40,7 +40,7 @@
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/icon.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Contact No." name="contact" [(ngModel)]="orderForm.contact" #contact="ngModel" required>
+							<input type="tel" class="form-control" placeholder="Contact No." name="contact" [(ngModel)]="orderForm.contact" #contact="ngModel" required>
 							<div class="error-display" *ngIf="contact.errors && (contact.dirty || contact.touched)">
 								<div [hidden]="!contact.errors.required">
 									Please Enter the Contact Number!
@@ -91,14 +91,10 @@
 									Please Enter the Accessory Type!
 								</div>
 							</div> -->
-							<!-- <div class="error-display" *ngIf="accessory.errors && (accessory.dirty || accessory.touched)">
-								<div [hidden]="!accessory.errors.required">
-									Please Select the Accessory Type!
-								</div>
-							</div> -->
-							<select name="accessory" [(ngModel)]="orderForm.accessory" #accessory="ngModel" multiple required>
+							<!-- <select name="accessory" class="" [(ngModel)]="orderForm.accessory" #accessory="ngModel" multiple required>
 								<option [value]="option" *ngFor="let option of orderOption">{{option}}</option>
-							</select>					
+							</select>	 -->
+							<span class="order-select" (click)="showAccessoryType = !showAccessoryType">Accessory Type</span>										
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/stack-overflow.png" alt="" height="20"></span>
@@ -125,7 +121,27 @@
 				</div>
 				<div class="alert-pop" *ngIf="message" role="alert">
 					<p>Order Request Successfully Registered! </p>
-				</div>	
+				</div>
+				<!-- set accessory type -->
+				<div class="set-order" [hidden]="!showAccessoryType">
+					<div class="show-type">
+						<ul>
+							<li *ngFor="let option of orderOption; let i=index">
+								<span>{{option.name}}</span>
+								<input type="number" [(ngModel)]="option.quantity" />
+								<span class="check-box {{option.class}}" (click)="addAccessory(option,i);">
+									<img src="assets/img/done-tick.png" alt="">
+								</span>
+							</li>
+						</ul>
+					</div>
+					<div class="modal-sec">
+						<span class="cancel-access btn-blue-outline" (click)="showAccessoryType = !showAccessoryType">Cancel</span>
+					</div>
+				</div>
+				<div class="modal-close" [hidden]="!showAccessoryType" (click)="showAccessoryType = !showAccessoryType"></div>
+
+				<!-- set accessory type end-->
 			</ion-col>
 			<ion-col col-1></ion-col>
 		</ion-row>

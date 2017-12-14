@@ -42,4 +42,8 @@ export class AllPostProvider {
       .map(res=> res.json());
       return response;
     }
+    saveSignup(formValue): Observable<any>{
+      let response = this.http.post(this.url+ 'newuser',formValue).map(res=> res.json());
+      return response;
+    }
 }

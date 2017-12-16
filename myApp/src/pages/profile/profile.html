@@ -26,25 +26,45 @@
 			<ion-col col-1></ion-col>
 			<ion-col col-10>
 				<div class="user-profile">
-					<form action="">
+					<form #userForm="ngForm" (ngSubmit)="userProfile(userForm.value)">
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Name">
+							<input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="userForm.name" #name="ngModel" required>
+							<div class="error-display" *ngIf="name.errors && (name.dirty || name.touched)">
+								<div [hidden]="!name.errors.required">
+									Please Enter the name!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/close-envelope.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Email Id">
+							<input type="text" class="form-control" placeholder="Email Id" name="email" [(ngModel)]="userForm.email" #email="ngModel" required>
+							<div class="error-display" *ngIf="email.errors && (email.dirty || email.touched)">
+								<div [hidden]="!email.errors.required">
+									Please Enter the Email!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/icon.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Contact No." >
+							<input type="number" class="form-control" placeholder="Contact No." name="contact" [(ngModel)]="userForm.contact" #contact="ngModel" required>
+							<div class="error-display" *ngIf="contact.errors && (contact.dirty || contact.touched)">
+								<div [hidden]="!contact.errors.required">
+									Please Enter the Number!
+								</div>
+							</div>
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
-							<textarea type="text" class="form-control" placeholder="Address"></textarea>
+							<textarea type="text" class="form-control" placeholder="Address" name="address" [(ngModel)]="userForm.address" #address="ngModel" required></textarea>
+							<div class="error-display" *ngIf="address.errors && (address.dirty || address.touched)">
+								<div [hidden]="!address.errors.required">
+									Please Enter the Address!
+								</div>
+							</div>
 						</div>
 						<div class="login-button submit-button">
-							<button class="btn btn-blue-outline" (click)="homeRoute()">Submit</button>
+							<button class="btn btn-blue-outline" [disabled]="!userForm.valid">Submit</button>
 						</div>
 					</form>
 				</div>

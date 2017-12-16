@@ -45,14 +45,14 @@
 								<span class="icon-set"><img src="assets/img/close-envelope.png" alt="Email Address" height="20"></span>
 								<input type="email" class="form-control" placeholder="Email Address" name="email" [(ngModel)]="signupForm.email" #email="ngModel" required>
 								<div class="error-display" *ngIf="email.errors && (email.dirty || email.touched)">
-									<div [hidden]="!email.error.required">
+									<div [hidden]="!email.errors.required">
 										Please Enter the Email Address!
 									</div>
 								</div>
 							</div>
 							<div class="form-group signup-input">
 								<span class="icon-set"><img src="assets/img/padlock.png" alt="Password" height="20"></span>
-								<input type="text" class="form-control" placeholder="Password" name="password" [(ngModel)]="signupForm.password" #password="ngModel" required>
+								<input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="signupForm.password" #password="ngModel" required>
 								<div class="error-display" *ngIf="password.errors && (password.dirty || password.touched)">
 									<div [hidden]="!password.errors.required">
 										Please Enter the Password!
@@ -67,8 +67,12 @@
 						<div class="login-with">
 							<span class="login-strip">Login with</span>
 							<div class="social-logins">
-								<span><img src="assets/img/facebook.png" alt="Facebook" class="img-responsive" width="50"></span>
-								<span (click)="signupGoogle();"><img src="assets/img/google-plus.png" alt="Google" class="img-responsive" width="50"></span>
+								<!-- <span><img src="assets/img/facebook.png" alt="Facebook" class="img-responsive" width="50"></span> -->
+								<!-- <span (click)="signupGoogle();"><img src="assets/img/google-plus.png" alt="Google" class="img-responsive" width="50"></span> -->
+								<!-- <a href=""></a> -->
+								<a href="https://aquatatva.herokuapp.com/api/auth/google">
+									<img src="assets/img/google-plus.png" alt="" class="img-responsive" width="50">
+								</a>
 							</div>
 						</div>
 						<div class="alert-pop" *ngIf="message" role="alert">

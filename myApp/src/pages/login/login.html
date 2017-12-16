@@ -93,20 +93,30 @@
 				<ion-row>
 					<ion-col col-1></ion-col>
 					<ion-col col-10>
-						<form action="">
+						<form #loginForm ="ngForm" (ngSubmit)="login(loginForm.value)">
 							<div class="form-group email">
 								<span class="icon-set"><img src="assets/img/close-envelope.png" alt="Email" height="20"></span>
-								<input type="email" class="form-control" placeholder="Enter Email Address">
+								<input type="email" class="form-control" placeholder="Enter Email Address" name="email" [(ngModel)]="loginForm.email" #email ="ngModel" required>
+								<div class="error-display" *ngIf="email.errors && (email.dirty || email.touched)">
+									<div [hidden]="!email.errors.required">
+										Please Enter the Email!
+									</div>
+								</div>
 							</div>
 							<div class="form-group password">
 								<span class="icon-set"><img src="assets/img/padlock.png" alt="Password" height="20"></span>
-								<input type="password" class="form-control" placeholder="Enter Password">
+								<input type="password" class="form-control" placeholder="Enter Password" name="password" [(ngModel)]="loginForm.password" #password="ngModel" required>
+								<div class="error-display" *ngIf="password.errors && (password.dirty || password.touched)">
+									<div [hidden]="!password.errors.required">
+										Please Enter the Password!
+									</div>
+								</div>
 							</div>
 							<div class="forgot-password">
 								<span>Forgot Password ?</span>
 							</div>
 							<div class="login-button">
-								<button class="btn btn-blue-outline" (click)="homeRoute()">Log in</button>
+								<button class="btn btn-blue-outline" [disabled]="!loginForm.valid">Log in</button>
 							</div>
 						</form>						
 						<span class="seperater">OR</span>

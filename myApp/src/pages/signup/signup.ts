@@ -30,7 +30,7 @@ export class SignupPage {
     email: "",
     password: ""
   }
-  
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public FormBuilder: FormBuilder,public menu:MenuController,public http:Http, public signupProvider: AllPostProvider) {
     console.log(this.signUpData,'sign');
@@ -49,14 +49,22 @@ export class SignupPage {
         setTimeout(function(){
           this.message = false;
         },6000);
+        this.navCtrl.setRoot(HomePage);        
       }else {
         this.messageFalse = true;
         setTimeout(function(){
-          this.message = false;
+          this.messageFalse = false;
         },6000);
       }
     })
   }
+  // signup google 
+  // signupGoogle(){
+  //   this.signupProvider.google().subscribe(data=>{
+  //     console.log(data,'what is data');
+  //   });
+  // }
+  // signup google end
   loginRedirect(){
   this.navCtrl.push(LoginPage);
   }

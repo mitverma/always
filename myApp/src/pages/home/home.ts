@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,MenuController } from 'ionic-angular';
 import { ContactusPage } from '../contactus/contactus';
 import { SupportPage } from '../support/support';
 import { FaqPage } from '../faq/faq';
@@ -15,7 +15,7 @@ import { ProfilePage } from '../profile/profile';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,public menu:MenuController) {
 
   }
   viewVideos(){
@@ -36,5 +36,8 @@ viewFaq(){
 viewContact(){
 	this.navCtrl.push(ContactusPage);
 }
-
+ ionViewDidLoad() {
+    console.log('ionViewDidLoad SignupPage');
+    this.menu.enable(true);
+  }
 }

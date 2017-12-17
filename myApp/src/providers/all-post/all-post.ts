@@ -20,7 +20,7 @@ export class AllPostProvider {
     
   }
   private url = "https://aquatatva.herokuapp.com/api/";	
-  private urlgoogle = "https://aquatatva.herokuapp.com/api/auth/google";
+  // private urlgoogle = "https://aquatatva.herokuapp.com/api/auth/google";
 
     // getFaq(): Observable<any> {
     //   let response = this.http.get(this.url + 'showfaq').map(res => console.log(res.json()));
@@ -47,8 +47,11 @@ export class AllPostProvider {
       let response = this.http.post(this.url+ 'newuser',formValue).map(res=> res.json());
       return response;
     }
-    // google(): Observable<any>{
-    //   let response = this.http.post(this.urlgoogle).map(res=> res.json());
+    // loginView(formValue): Observable<any>{
+    //   let urlLoginView = 'https://aquatatva.herokuapp.com/api/login?email='+formValue.email+'&password='+formValue.password+''
+    //   console.log(urlLoginView,'url');
+    //   let response = this.http.post(urlLoginView).map(res=> res.json());
+    //   // let response = this.http.post('https://aquatatva.herokuapp.com/api/login?email='+formValue.email+'&password='+formValue.password+'').map(res=> res.json());
     //   return response;
     // }
 }

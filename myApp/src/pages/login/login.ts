@@ -34,7 +34,10 @@ loginForm = {};
   login(loginForm){
     console.log(loginForm,'loginForm');
     // let loginUrl = https://aquatatva.herokuapp.com/api/login?email='+loginForm.email+'&password='+loginForm.password
-    this.http.post('https://aquatatva.herokuapp.com/api/login?email='+loginForm.email+'&password='+loginForm.password+'').map(res => res.json()).subscribe(data =>{
+    this.http.post('https://aquatatva.herokuapp.com/api/login',{
+      email: loginForm.email,
+      password: loginForm.password
+    }).map(res => res.json()).subscribe(data =>{
       if(data){
         this.navCtrl.setRoot(HomePage); 
         localStorage.setItem('token', data.token);

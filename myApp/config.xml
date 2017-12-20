@@ -92,4 +92,5 @@
     <engine name="android" spec="~6.4.0" />
     <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.2" />
+    <plugin name="cordova-plugin-youtube-video-player" spec="^1.0.6" />
 </widget>

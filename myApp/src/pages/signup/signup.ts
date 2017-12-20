@@ -7,9 +7,6 @@ import {AllPostProvider} from '../../providers/all-post/all-post';
 import {FormGroup, FormBuilder, FormControl, Validators} from "@angular/forms";
 import { NgForm } from '@angular/forms';
 
-// import { BrowserTab } from '@ionic-native/browser-tab';
-// import { InAppBrowser } from '@ionic-native/in-app-browser';
-
 /**
  * Generated class for the SignupPage page.
  *
@@ -33,37 +30,11 @@ export class SignupPage {
     email: "",
     password: ""
   }
-// private browserTab: BrowserTab
-// private iab: InAppBrowser,
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public FormBuilder: FormBuilder,public menu:MenuController,public http:Http, public signupProvider: AllPostProvider) {
     console.log(this.signUpData,'sign');
   }
-
-  // facebookAuth(){
-  //   this.browserTab.isAvailable().then(
-  //     (isAvailable:boolean)=>{
-  //       if(isAvailable){
-  //         this.browserTab.openUrl('https://aquatatva.herokuapp.com/api/auth/facebook');
-  //       }else{
-  //         const fb=this.iab.create('https://aquatatva.herokuapp.com/api/auth/facebook','_self','location=no')
-  //       }
-  //     }
-  //   );
-  // }
-
-  // googleAuth(){
-  //   this.browserTab.isAvailable().then(
-  //     (isAvailable:boolean)=>{
-  //       if(isAvailable){
-  //         this.browserTab.openUrl('https://aquatatva.herokuapp.com/api/auth/google');
-  //       }else{
-  //         const fb=this.iab.create('https://aquatatva.herokuapp.com/api/auth/google','_self','location=no')
-  //       }
-  //     }
-  //   );
-
-  // }
-
    signup(signupValue){
     console.log(signupValue);
     this.signUpData.first_name = signupValue.firstname;

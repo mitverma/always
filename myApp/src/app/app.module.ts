@@ -18,6 +18,8 @@ import { ProfilePage } from '../pages/profile/profile';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { BrowserTab } from '@ionic-native/browser-tab';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { AllPostProvider } from '../providers/all-post/all-post';
 
 @NgModule({
@@ -58,6 +60,8 @@ import { AllPostProvider } from '../providers/all-post/all-post';
   providers: [
     StatusBar,
     SplashScreen,
+    BrowserTab,
+    InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AllPostProvider
   ]

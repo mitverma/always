@@ -47,11 +47,12 @@ export class AllPostProvider {
       let response = this.http.post(this.url+ 'newuser',formValue).map(res=> res.json());
       return response;
     }
-    // loginView(formValue): Observable<any>{
-    //   let urlLoginView = 'https://aquatatva.herokuapp.com/api/login?email='+formValue.email+'&password='+formValue.password+''
+    // loginView(formValue): Observable<any>{      
     //   console.log(urlLoginView,'url');
-    //   let response = this.http.post(urlLoginView).map(res=> res.json());
-    //   // let response = this.http.post('https://aquatatva.herokuapp.com/api/login?email='+formValue.email+'&password='+formValue.password+'').map(res=> res.json());
+    //   this.http.post('https://aquatatva.herokuapp.com/api/login',{
+    //     email: formValue.email,
+    //     password: formValue.password
+    // }).map(res=> res.json());
     //   return response;
     // }
 }

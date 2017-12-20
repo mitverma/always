@@ -18,14 +18,15 @@
 
 <ion-content>
 	<div class="bg-gradient"></div>
-	<div class="logo">
+	<!-- <div class="logo">
 		<h1><img src="assets/img/logo.png" alt=""></h1>
-	</div>
+	</div> -->
 	<ion-grid>
 		<ion-row>
 			<ion-col col-1></ion-col>
 			<ion-col col-10>
-				<div class="user-profile">
+				<span class="edit-profile" (click)="editProfile();">Edit</span>
+				<!-- <div class="user-profile" style="display: none;">
 					<form #userForm="ngForm" (ngSubmit)="userProfile(userForm.value)">
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
@@ -38,7 +39,7 @@
 						</div>
 						<div class="form-group input-all">
 							<span class="icon-set"><img src="assets/img/close-envelope.png" alt="" height="20"></span>
-							<input type="text" class="form-control" placeholder="Email Id" name="email" [(ngModel)]="userForm.email" #email="ngModel" required>
+							<input type="text" class="form-control" placeholder="Email Id" name="email" [value]="userData.email" [(ngModel)]="userForm.email" #email="ngModel" required>
 							<div class="error-display" *ngIf="email.errors && (email.dirty || email.touched)">
 								<div [hidden]="!email.errors.required">
 									Please Enter the Email!
@@ -67,7 +68,42 @@
 							<button class="btn btn-blue-outline" [disabled]="!userForm.valid">Submit</button>
 						</div>
 					</form>
-				</div>
+				</div> -->
+				<form #userForm="ngForm" (ngSubmit)="userProfile(userData)">
+					<div class="user-data">
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
+							<input type="text" class="form-control" [value]="userData.first_name" name="firstname" [(ngModel)]="userData.first_name" #firstname = "ngModel" placeholder="First Name"  [disabled]="editView">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
+							<input type="text" class="form-control" [value]="userData.last_name" placeholder="Last Name" name="lastname" [(ngModel)]="userData.last_name" #lastname = "ngModel" [disabled]="editView">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
+							<input type="text" class="form-control" [value]="userData.mobile" placeholder="Contact No" name="contact" [(ngModel)]="userData.mobile" #contact = "ngModel"  [disabled]="editView">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
+							<input type="text" class="form-control" [value]="userData.email" name="email" [(ngModel)]="userData.email" #email = "ngModel" placeholder="Email"  [disabled]="editView">
+						</div>
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
+							<input type="text" class="form-control" [value]="userData.city" name="cityname" [(ngModel)]="userData.city" #cityname = "ngModel" placeholder="City" [disabled]="editView">
+						</div>	
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
+							<input type="text" class="form-control" [value]="userData.state" name="statename" [(ngModel)]="userData.state" #statename = "ngModel" placeholder="State" [disabled]="editView">
+						</div>	
+						<div class="form-group input-all">
+							<span class="icon-set"><img src="assets/img/man-user.png" alt="" height="20"></span>
+							<textarea type="text" class="form-control" [value]="userData.address" name="add" [(ngModel)]="userData.address" #add = "ngModel" placeholder="Address"  [disabled]="editView"></textarea>
+						</div>				
+					</div>
+					<div class="login-button submit-button">
+						<button class="btn btn-blue-outline" [disabled]="!userForm.valid">Submit</button>
+					</div>
+				</form>
 			</ion-col>
 			<ion-col col-1></ion-col>
 		</ion-row>

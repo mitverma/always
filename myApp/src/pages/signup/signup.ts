@@ -44,17 +44,18 @@ export class SignupPage {
     console.log(this.signUpData)
     this.signupProvider.saveSignup(this.signUpData).subscribe(data=>{
       // successfully created user
-      if(data.message == "successfully created user"){
-        this.message = true;
-        setTimeout(function(){
-          this.message = false;
-        },6000);
+      if(data){
+        localStorage.setItem('token',data.token);
+        // this.message = true;
+        // setTimeout(function(){
+        //   this.message = false;
+        // },6000);
         this.navCtrl.setRoot(HomePage);        
       }else {
-        this.messageFalse = true;
-        setTimeout(function(){
-          this.messageFalse = false;
-        },6000);
+        // this.messageFalse = true;
+        // setTimeout(function(){
+        //   this.messageFalse = false;
+        // },6000);
       }
     })
   }

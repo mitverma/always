@@ -40,8 +40,8 @@ loginForm = {};
     }).map(res => res.json()).subscribe(data =>{
       if(data){
         this.navCtrl.setRoot(HomePage); 
-        localStorage.setItem('token', data.token);
-        console.log(localStorage.getItem('token'),'token');
+        localStorage.setItem('aqua-token', data.token);
+        console.log(localStorage.getItem('aqua-token'),'token');
       }else {
 
       }

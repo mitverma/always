@@ -7,6 +7,9 @@ import {AllPostProvider} from '../../providers/all-post/all-post';
 import {FormGroup, FormBuilder, FormControl, Validators} from "@angular/forms";
 import { NgForm } from '@angular/forms';
 
+
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 /**
  * Generated class for the SignupPage page.
  *
@@ -32,8 +35,12 @@ export class SignupPage {
   }
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public FormBuilder: FormBuilder,public menu:MenuController,public http:Http, public signupProvider: AllPostProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public FormBuilder: FormBuilder,public menu:MenuController,public http:Http, public signupProvider: AllPostProvider, private iab:InAppBrowser) {
     console.log(this.signUpData,'sign');
+  }
+
+  facebookAuth(){
+    const facebooklogin=this.iab.create('https://aquatatva.herokuapp.com/api/auth/facebook','_self','location=no');
   }
    signup(signupValue){
     console.log(signupValue);
@@ -45,7 +52,7 @@ export class SignupPage {
     this.signupProvider.saveSignup(this.signUpData).subscribe(data=>{
       // successfully created user
       if(data){
-        localStorage.setItem('token',data.token);
+        localStorage.setItem('aqua-token',data.token);
         // this.message = true;
         // setTimeout(function(){
         //   this.message = false;

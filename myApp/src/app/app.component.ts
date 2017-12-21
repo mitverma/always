@@ -48,6 +48,11 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      if(localStorage.getItem('aqua-token')){
+        this.rootPage=HomePage;
+      }else{
+        this.rootPage=SignupPage;
+      }
     });
   }
 
@@ -58,5 +63,6 @@ export class MyApp {
   }
   logout(){
     this.nav.setRoot(LoginPage);
+    localStorage.removeItem('aqua-token');
   }
 }

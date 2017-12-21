@@ -25,6 +25,7 @@
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="YouTubeDataApiKey" value="AIzaSyCLpetvLiB0RRbzDetC5UGnhkMejaq5lek" />
     <platform name="android">
+        <preference name="loadUrlTimeoutValue" value="700000" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />

@@ -21,7 +21,7 @@ export class AllPostProvider {
   }
   private url = "https://aquatatva.herokuapp.com/api/";	
   // private urlgoogle = "https://aquatatva.herokuapp.com/api/auth/google";
-
+  apiKey = 'AIzaSyDssXFsgTwGxh3ejcVWPe8DN8fH4Xq7WE0';
     // getFaq(): Observable<any> {
     //   let response = this.http.get(this.url + 'showfaq').map(res => console.log(res.json()));
     //   return response;
@@ -55,4 +55,18 @@ export class AllPostProvider {
     // }).map(res=> res.json());
     //   return response;
     // }
+ 
+  getPlaylistsForChannel(channel) {
+    return this.http.get('https://www.googleapis.com/youtube/v3/playlists?key=' + this.apiKey + '&channelId=' + channel + '&part=snippet,id&maxResults=20')
+    .map((res) => {
+      return res.json()['items'];
+    })
+  }
+ 
+  getListVideos(listId) {
+    return this.http.get('https://www.googleapis.com/youtube/v3/playlistItems?key=' + this.apiKey + '&playlistId=' + listId +'&part=snippet,id&maxResults=20')
+    .map((res) => {
+      return res.json()['items'];
+    })
+  }
 }

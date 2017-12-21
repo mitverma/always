@@ -20,6 +20,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BrowserTab } from '@ionic-native/browser-tab';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { AllPostProvider } from '../providers/all-post/all-post';
 
 @NgModule({
@@ -63,7 +64,8 @@ import { AllPostProvider } from '../providers/all-post/all-post';
     BrowserTab,
     InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AllPostProvider
+    AllPostProvider,
+    YoutubeVideoPlayer
   ]
 })
 export class AppModule {}

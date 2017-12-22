@@ -21,7 +21,7 @@ import { ProfilePage } from '../pages/profile/profile';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = VideosPage;
+  rootPage: any = SignupPage;
 
   pages: Array<{icon: any, title: string, component: any}>;
 

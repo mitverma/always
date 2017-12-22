@@ -23,6 +23,20 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { AllPostProvider } from '../providers/all-post/all-post';
 
+import{Facebook} from '@ionic-native/facebook';
+import firebase from 'firebase';
+
+export const firebaseconf={
+  apiKey: "AIzaSyAGE7vij6q6DBLfOvgK0JCCnHK9ZvcVO0c",
+  authDomain: "aquatatva-29da9.firebaseapp.com",
+  databaseURL: "https://aquatatva-29da9.firebaseio.com",
+  projectId: "aquatatva-29da9",
+  storageBucket: "aquatatva-29da9.appspot.com",
+  messagingSenderId: "169398150628"
+};
+
+firebase.initializeApp(firebaseconf);
+
 @NgModule({
   declarations: [
     MyApp,
@@ -65,6 +79,7 @@ import { AllPostProvider } from '../providers/all-post/all-post';
     InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AllPostProvider,
+    Facebook,
     YoutubeVideoPlayer
   ]
 })

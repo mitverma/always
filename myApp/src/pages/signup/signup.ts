@@ -9,6 +9,8 @@ import { NgForm } from '@angular/forms';
 
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import{Facebook} from '@ionic-native/facebook';
+import firebase from 'firebase';
 
 /**
  * Generated class for the SignupPage page.
@@ -35,12 +37,15 @@ export class SignupPage {
   }
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public FormBuilder: FormBuilder,public menu:MenuController,public http:Http, public signupProvider: AllPostProvider, private iab:InAppBrowser) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public FormBuilder: FormBuilder,public menu:MenuController,public http:Http, public signupProvider: AllPostProvider, private iab:InAppBrowser,public fb:Facebook) {
     console.log(this.signUpData,'sign');
   }
 
   facebookAuth(){
-    const facebooklogin=this.iab.create('https://aquatatva.herokuapp.com/api/auth/facebook','_self','location=no');
+    // const facebooklogin=this.iab.create('https://aquatatva.herokuapp.com/api/auth/facebook','_self','location=no');
+    this.fb.login(['email']).then(res=>{
+      alert(JSON.stringify(res))
+      })
   }
    signup(signupValue){
     console.log(signupValue);

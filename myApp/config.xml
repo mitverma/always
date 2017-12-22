@@ -95,4 +95,8 @@
         <variable name="DEEPLINK_HOST" value="aquatatva.herokuapp.com" />
     </plugin>
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
+    <plugin name="cordova-plugin-facebook4" spec="~1.9.1">
+        <variable name="APP_ID" value="929197873913020" />
+        <variable name="APP_NAME" value="Aquatatva" />
+    </plugin>
 </widget>

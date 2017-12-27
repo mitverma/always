@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import{Facebook} from '@ionic-native/facebook';
-import firebase from 'firebase';
+// import firebase from 'firebase';
 
 /**
  * Generated class for the SignupPage page.

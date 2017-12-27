@@ -84,6 +84,10 @@
     <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
     <plugin name="cordova-plugin-console" spec="^1.1.0" />
     <plugin name="cordova-plugin-device" spec="^1.1.7" />
+    <plugin name="cordova-plugin-facebook4" spec="~1.9.1">
+        <variable name="APP_ID" value="929197873913020" />
+        <variable name="APP_NAME" value="Aquatatva" />
+    </plugin>
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.2" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.1.0" />
     <plugin name="cordova-plugin-statusbar" spec="^2.3.0" />
@@ -95,8 +99,4 @@
         <variable name="DEEPLINK_HOST" value="aquatatva.herokuapp.com" />
     </plugin>
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
-    <plugin name="cordova-plugin-facebook4" spec="~1.9.1">
-        <variable name="APP_ID" value="929197873913020" />
-        <variable name="APP_NAME" value="Aquatatva" />
-    </plugin>
 </widget>

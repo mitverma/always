@@ -22,34 +22,31 @@
 		<ion-list>
 			<ion-card *ngFor="let video of Videos">
 				<ion-grid>
-					<ion-row>
-						<ion-col col-5>
-							<img src="{{video.img}}" alt="" class="img-responsive">
-						</ion-col>
-						<ion-col col-7>
-							<div class="video-detail">
-								<h4>{{video.title}}</h4>
-								<!-- <button class="view-more btn-cream-outline" ion-button>View More</button> -->
-							</div>
-						</ion-col>
-					</ion-row>
+					<a href="http://www.youtube.com/watch?v={{video.id.videoId}}">
+						<ion-row>
+							<ion-col col-5>
+								<span (click)="viewVideo(videoId)">
+									<img src="{{video.snippet.thumbnails.default.url}}" alt="" class="img-responsive">
+								</span>
+							</ion-col>
+							<ion-col col-7>
+								<div class="video-detail">
+									<h4>{{video.snippet.title}}</h4>
+									<!-- <button class="view-more btn-cream-outline" ion-button>View More</button> -->
+								</div>
+							</ion-col>
+						</ion-row>
+					</a>
 				</ion-grid>				
 			</ion-card>
 		</ion-list>
 	</div>
-	<ion-item>
+	<!-- <div class="video" [hidden]="viewIframe">
+		<iframe [src]="https://www.youtube.com/embed/{{id}}" frameborder="0"></iframe>
+	</div> -->
+	<!-- <ion-item>
 		<ion-label stacked>Channel ID</ion-label>
 		<ion-input type="text" [(ngModel)]="channelId"></ion-input>
 	</ion-item>
-	<button full ion-button (click)="searchPlaylists()" [disabled]="channelId === ''" color="danger">Search Playlists</button>
-	
-	<ion-list no-padding>
-		<button ion-item *ngFor="let list of playlists | async" (click)="openPlaylist(list.id)">
-			<ion-thumbnail item-start>
-				<img [src]="list.snippet.thumbnails.standard.url">
-			</ion-thumbnail>
-			<h2>{{ list.snippet.title }}</h2>
-			<p>{{ list.snippet.publishedAt | date:'short' }}</p>
-		</button>
-	</ion-list>
+	<button full ion-button (click)="searchPlaylists()" [disabled]="channelId === ''" color="danger">Search Playlists</button> -->
 </ion-content>

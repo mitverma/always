@@ -18,38 +18,48 @@ import { Observable } from 'rxjs/Observable';
 })
 export class VideosPage {
 	Videos : any[];
-  channelId = 'UCZZPgUIorPao48a1tBYSDgg';
+  videoViewId = "";
+  viewIframe = false;
+  // channelId = 'UCZZPgUIorPao48a1tBYSDgg';
+  channelId = 'UCYkdEL6EuJRJ_mfwKvganKg'; // krishna ka id
   playlists: Observable<any[]>;
   // UCU8x9woUxeNP2CPiakF_4bw
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public videoProvider: AllPostProvider) {
-  	this.Videos = [{
-  		img: "assets/img/video.jpg",
-  		title : "Aquatatva Purification Process"
-  	},{
-  		img: "assets/img/video.jpg",
-  		title : "Aquatatva Purification Process"
-  	}];
+  	// this.Videos = [{
+  	// 	img: "assets/img/video.jpg",
+  	// 	title : "Aquatatva Purification Process"
+  	// },{
+  	// 	img: "assets/img/video.jpg",
+  	// 	title : "Aquatatva Purification Process"
+  	// }];
   }
-  searchPlaylists() {
-    this.playlists = this.videoProvider.getPlaylistsForChannel(this.channelId);
-    this.playlists.subscribe(data => {
-      console.log('playlists: ', data);
-    }, err => {
-      // let alert = this.alertCtrl.create({
-      //   title: 'Error',
-      //   message: 'No Playlists found for that Channel ID',
-      //   buttons: ['OK']
-      // });
-      // alert.present();
-      console.log('error');
-    })
-  }
- 
+  // searchPlaylists() {
+  //   this.playlists = this.videoProvider.getPlaylistsForChannel(this.channelId);
+  //   this.playlists.subscribe(data => {
+  //     this.Videos =  data;
+  //     console.log('playlists: ', data, this.Videos,);
+  //   }, err => {
+      
+  //     console.log('error');
+  //   })
+  // }
   openPlaylist(id) {
     this.navCtrl.push('PlaylistPage', {id: id});
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad VideosPage');
+      this.playlists = this.videoProvider.getPlaylistsForChannel(this.channelId);
+    this.playlists.subscribe(data => {
+      this.Videos =  data;
+      console.log('playlists: ', data, this.Videos,);
+    }, err => {
+      
+      console.log('error');
+    })
   }
+  // viewVideo(videoId){
+  //   this.viewIframe = true;
+  //   this.videoViewId = '9wDJh5quZ4w';  
+  // }
 
 }

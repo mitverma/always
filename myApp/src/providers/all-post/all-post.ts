@@ -21,7 +21,7 @@ export class AllPostProvider {
   }
   private url = "https://aquatatva.herokuapp.com/api/";	
   // private urlgoogle = "https://aquatatva.herokuapp.com/api/auth/google";
-  apiKey = 'AIzaSyDssXFsgTwGxh3ejcVWPe8DN8fH4Xq7WE0';
+  apiKey = 'AIzaSyCLpetvLiB0RRbzDetC5UGnhkMejaq5lek';
     // getFaq(): Observable<any> {
     //   let response = this.http.get(this.url + 'showfaq').map(res => console.log(res.json()));
     //   return response;
@@ -56,9 +56,16 @@ export class AllPostProvider {
     //   return response;
     // }
  
-  getPlaylistsForChannel(channel) {
-    return this.http.get('https://www.googleapis.com/youtube/v3/playlists?key=' + this.apiKey + '&channelId=' + channel + '&part=snippet,id&maxResults=20')
-    .map((res) => {
+  // getPlaylistsForChannel(channel) {
+  //   return this.http.get('https://www.googleapis.com/youtube/v3/playlists?key=' + this.apiKey + '&channelId=' + channel + '&part=snippet,id&maxResults=20')
+  //   .map((res) => {
+  //     return res.json()['items'];
+  //   })
+  // } 
+
+   getPlaylistsForChannel(channel) {
+    //https://www.googleapis.com/youtube/v3/search?key={your_key_here}&channelId={channel_id_here}&part=snippet,id&order=date&maxResults=20
+    return this.http.get('https://www.googleapis.com/youtube/v3/search?key='+ this.apiKey +'&channelId='+ channel +'&part=snippet,id&order=date&maxResults=20').map((res) => {
       return res.json()['items'];
     })
   }
@@ -70,3 +77,5 @@ export class AllPostProvider {
     })
   }
 }
+//http://www.youtube.com/watch?v={video_id_here}// 9wDJh5quZ4w
+//https://www.youtube.com/embed

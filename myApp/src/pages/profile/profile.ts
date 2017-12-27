@@ -43,7 +43,7 @@ export class ProfilePage {
       	this.http.get('https://aquatatva.herokuapp.com/api/show/'+token+'').map(res => res.json()).subscribe(data =>{
       if(data){
         this.userData = data[0];
-        console.log(this.userData,'userData');
+        // console.log(this.userData,'userData');
         // this.userForm.first_name = this.userData.first_name; 
         // this.userForm.last_name = this.userData.last_name; 
         // this.userForm.mobile = this.userData.mobile; 
